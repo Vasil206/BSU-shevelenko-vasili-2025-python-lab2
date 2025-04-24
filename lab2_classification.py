@@ -19,11 +19,13 @@ logreg_model.fit(x_train, y_train)
 y_pred_train = logreg_model.predict(x_train)
 y_pred_test = logreg_model.predict(x_test)
 
-from sklearn.metrics import classification_report
+from sklearn.metrics import classification_report, confusion_matrix
 
 print("test report")
 report = classification_report(y_test, y_pred_test)
 print(report)
+print(confusion_matrix(y_test, y_pred_test))
+
 
 print("train report")
 reportTrain = classification_report(y_train, y_pred_train)
